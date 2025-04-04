@@ -58,6 +58,8 @@
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0,0,0,0.2);
             transition: transform 0.3s ease;
+            position: relative;
+            background: #f0f0f0;
         }
         
         .profile-img-container:hover {
@@ -68,8 +70,21 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
         }
         
+        .profile-img-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+        }
+
         h1, h2, h3, h4 {
             font-family: 'Poppins', sans-serif;
             margin-top: 0;
@@ -430,7 +445,18 @@
 <body>
     <header>
         <div class="profile-img-container">
-            <img src="https://raw.githubusercontent.com/MutijimaRaoul/Robert-Bushayija-Portfolio.github.io/main/IMG_4857.jpg" alt="Bushayija Robert - IMG_4857">
+            <img 
+                src="https://raw.githubusercontent.com/MutijimaRaoul/Robert-Bushayija-Portfolio.github.io/main/IMG_4857.jpg" 
+                alt="Bushayija Robert - IMG_4857"
+                class="profile-img"
+                loading="lazy"
+                width="180"
+                height="180"
+                onerror="this.style.display='none'; document.querySelector('.profile-img-placeholder').style.display='flex'"
+            >
+            <div class="profile-img-placeholder" style="display: none;">
+                <i class="fas fa-user-tie fa-2x"></i>
+            </div>
         </div>
         <h1>Bushayija Robert</h1>
         <p class="tagline">Warehouse & Logistics Professional</p>
@@ -448,6 +474,7 @@
             <h3>Key Qualifications</h3>
             <ul>
                 <li>4+ years of progressive experience in warehouse operations and logistics management</li>
+                <li>MBA-educated professional with specialization in Logistics & Supply Chain Management</li>
                 <li>Proven ability to reduce operational costs through process optimization and efficiency improvements</li>
                 <li>Skilled in inventory control systems with a focus on accuracy and loss prevention</li>
                 <li>Experienced in team leadership and cross-functional collaboration</li>
@@ -518,14 +545,45 @@
         <div class="education-item">
             <div class="education-header">
                 <div>
-                    <div class="job-title">Supply Chain Management Certification</div>
-                    <div class="company">Rwanda Polytechnic | Kigali, Rwanda</div>
+                    <div class="job-title">Master of Business Administration (MBA)</div>
+                    <div class="company">Mount Kenya University (MKU) | Specialization in Logistics & Supply Chain Management</div>
                 </div>
-                <div class="date">2021</div>
+                <div class="date">[Year Completed]</div>
             </div>
             <ul>
-                <li>Completed comprehensive training in modern supply chain principles</li>
-                <li>Coursework in inventory management, logistics coordination, and warehouse optimization</li>
+                <li>Advanced degree focusing on strategic supply chain management and business administration</li>
+                <li>Specialized coursework in logistics optimization, inventory control, and supply chain analytics</li>
+                <li>Developed comprehensive understanding of global supply chain operations and strategic planning</li>
+            </ul>
+        </div>
+        
+        <div class="education-item">
+            <div class="education-header">
+                <div>
+                    <div class="job-title">Certificate of Recommendation</div>
+                    <div class="company">Rwanda Revenue Authority (RRA)</div>
+                </div>
+                <div class="date">[Year Received]</div>
+            </div>
+            <ul>
+                <li>Recognized for exceptional performance during logistics internship</li>
+                <li>Awarded for demonstrating outstanding knowledge of customs procedures</li>
+                <li>Commended for professionalism and attention to detail in documentation</li>
+            </ul>
+        </div>
+        
+        <div class="education-item">
+            <div class="education-header">
+                <div>
+                    <div class="job-title">Certificate of Recommendation</div>
+                    <div class="company">Bolloré Transport & Logistics</div>
+                </div>
+                <div class="date">[Year Received]</div>
+            </div>
+            <ul>
+                <li>Recognized for outstanding contributions to warehouse operations</li>
+                <li>Awarded for implementing process improvements that increased efficiency</li>
+                <li>Commended for leadership in training and developing warehouse staff</li>
             </ul>
         </div>
         
@@ -559,6 +617,8 @@
             <div class="skill">Supply Chain Optimization</div>
             <div class="skill">Microsoft Excel</div>
             <div class="skill">Bilingual (English/French)</div>
+            <div class="skill">Strategic Planning</div>
+            <div class="skill">MBA-Level Analysis</div>
         </div>
     </section>
 
